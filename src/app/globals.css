@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+
+/* 1. Habilitar el Modo Oscuro por clases (necesario para next-themes) */
+@variant dark (&:where(.dark, .dark *));
+
+/* 2. Configurar tu paleta de colores Velvet Orchid */
+@theme {
+  --color-velvet-orchid-50: #f8ecf8;
+  --color-velvet-orchid-100: #f0d9f2;
+  --color-velvet-orchid-200: #e1b4e4;
+  --color-velvet-orchid-300: #d28ed7;
+  --color-velvet-orchid-400: #c368ca;
+  --color-velvet-orchid-500: #b542bd;
+  --color-velvet-orchid-600: #903597;
+  --color-velvet-orchid-700: #6c2871;
+  --color-velvet-orchid-800: #481b4b;
+  --color-velvet-orchid-900: #240d26;
+  --color-velvet-orchid-950: #19091a;
+}
+
+/* 3. Estilos base del sitio dependiendo del tema (Claro / Oscuro) */
+@layer base {
+  body {
+    background-color: var(--color-velvet-orchid-50);
+    color: var(--color-velvet-orchid-950);
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .dark body {
+    background-color: var(--color-velvet-orchid-950);
+    color: var(--color-velvet-orchid-50);
+  }
+  html {
+    scroll-behavior: smooth;
+  }  
+}
+
+@layer utilities {
+  .mask-sides {
+    mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+  }
+  .mask-carousel {
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 10%,
+      black 90%,
+      transparent
+    );
+  }
+}
