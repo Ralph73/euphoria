@@ -36,7 +36,8 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts",
-    "src/app/admin/settings/users/page,tsx"
+    "src/app/admin/settings/users/page,tsx",
+    "src/app/api/appointments/confirm/[token]/route.ts.bak"
   ],
   "exclude": [
     "node_modules"
