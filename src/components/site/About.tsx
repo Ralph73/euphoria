@@ -8,10 +8,10 @@ export const About = () => (
                 Redefiniendo <br /> <span className="text-velvet-orchid-400">El Bienestar</span> Masculino.
             </h2>
             <div className="space-y-8">
-                <p className="text-velvet-orchid-200 text-lg font-light leading-relaxed">
+                <p className="text-velvet-orchid-500 dark:text-velvet-orchid-200 text-lg font-light leading-relaxed">
                     En un mundo de exigencias constantes, el verdadero lujo es el tiempo y el silencio. EUPHORIA nace como un santuario diseñado para el caballero que comprende que la excelencia personal comienza con un cuerpo en calma y una mente despejada.
                 </p>
-                <button className="group flex items-center gap-4 text-velvet-orchid-500 font-black uppercase tracking-widest text-xs">
+                <button className="group flex items-center gap-4 text-stone-600 dark:text-amber-400 font-black uppercase tracking-widest text-xs">
                     Compruebalo <ArrowRight className="group-hover:translate-x-2 transition-transform" />
                 </button>
             </div>

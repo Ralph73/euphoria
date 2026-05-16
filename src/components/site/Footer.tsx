@@ -10,6 +10,8 @@ export const Footer = () => {
   // Valores por defecto si no hay settings o mientras carga
   const address = settings?.direccion || "Henequén 104, Zaragoza, 32590 Cd. Juárez, Chih.";
   const phone = settings?.telefono || "+52 656 745-7746";
+  const customMessage = "Hola, me gustaría recibir más información sobre sus servicios.";
+
   const email = settings?.email || "contacto@euphoria.com.mx";
 
   // Redes sociales
@@ -17,7 +19,23 @@ export const Footer = () => {
   const facebook = settings?.facebook_url || "#";
 
   // Extraer número de teléfono para WhatsApp (solo dígitos)
-  const whatsappNumber = phone.replace(/\D/g, '');
+  // const whatsappNumber = phone.replace(/\D/g, '');
+  let whatsappNumber = phone.replace(/\D/g, '');
+
+
+  if (whatsappNumber.startsWith('52') && whatsappNumber.length === 12) {
+    whatsappNumber = '521' + whatsappNumber.substring(2);
+  }
+
+  const encodedMessage = encodeURIComponent(customMessage);
+
+  const openWhatsApp = () => {
+    const baseUrl = /Android|iPhone|iPad/i.test(navigator.userAgent)
+      ? 'https://whatsapp.com'
+      : 'https://wa.me';
+
+    window.open(`${baseUrl}?phone=${whatsappNumber}&text=${encodedMessage}`, '_blank');
+  };
 
   // URL del mapa usando la dirección
   const mapUrl = `https://www.google.com/maps?q=${encodeURIComponent(address)}&output=embed`;
@@ -127,7 +145,9 @@ export const Footer = () => {
               </div>
 
               <button
-                onClick={() => window.open(`https://wa.me/${whatsappNumber}`, '_blank')}
+                // onClick={() => window.open(`https://wa.me/${whatsappNumber}`, '_blank')}
+                onClick={openWhatsApp}
+
                 className="w-full mt-6 bg-green-500 hover:bg-green-600 text-white py-3 px-4 font-black uppercase tracking-widest text-xs transition-all flex items-center justify-center gap-2 active:scale-95 rounded-sm"
               >
                 <Send size={14} /> WhatsApp

@@ -95,7 +95,7 @@ export const Hero = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.5, duration: 0.6 }}
-                    className="mt-1 text-lg md:text-xl lg:text-4xl font-medium text-velvet-orchid-700 dark:text-velvet-orchid-300 max-w-4xl mx-auto"
+                    className="mt-1 text-lg md:text-xl lg:text-4xl font-medium text-velvet-orchid-500 dark:text-velvet-orchid-200 max-w-4xl mx-auto"
                 >
                     {settings?.hero_subtitle || 'Relajación Exclusiva para el Caballero Moderno'}
                 </motion.p>

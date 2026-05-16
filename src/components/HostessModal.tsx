@@ -247,7 +247,7 @@ export default function HostessModal({ host, onClose }: HostessModalProps) {
                                     )}
 
                                     {/* Botón WhatsApp */}
-                                    <a
+                                    {/*                                     <a
                                         href={`https://wa.me/?text=${encodeURIComponent(whatsappMessage)}`}
                                         target="_blank"
                                         rel="noopener noreferrer"
@@ -256,7 +256,7 @@ export default function HostessModal({ host, onClose }: HostessModalProps) {
                                         <MessageCircle size={18} />
                                         Contactar por WhatsApp
                                     </a>
-                                </div>
+ */}                                </div>
                             </motion.div>
                         )}
                     </AnimatePresence>

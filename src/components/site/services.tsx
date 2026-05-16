@@ -88,13 +88,13 @@ export const Services = () => {
                             </div>
 
                             {/* Nombre del servicio */}
-                            <h3 className="text-xl md:text-2xl font-black text-white mb-2 group-hover:text-velvet-orchid-400 transition-colors">
+                            <h3 className="text-xl md:text-2xl font-black text-white mb-2 group-hover:text-velvet-orchid-500 transition-colors">
                                 {service.name}
                             </h3>
 
                             {/* Descripción */}
                             {service.description && (
-                                <p className="text-velvet-orchid-300 text-sm mb-4 line-clamp-2">
+                                <p className="text-velvet-orchid-600 dark:text-velvet-orchid-300 text-sm mb-4 line-clamp-2">
                                     {service.description}
                                 </p>
                             )}
@@ -106,9 +106,9 @@ export const Services = () => {
                                     <span className="text-white font-bold text-lg">
                                         {typeof service.price === 'number' ? service.price.toFixed(2) : service.price}
                                     </span>
-                                    <span className="text-velvet-orchid-400 text-xs">MXN</span>
+                                    <span className="text-stone-800 dark:text-velvet-orchid-300 text-xs">MXN</span>
                                 </div>
-                                <button className="flex items-center gap-1 text-velvet-orchid-400 hover:text-white text-sm font-medium transition-colors group-hover:translate-x-1 duration-300">
+                                <button className="flex items-center gap-1 text-amber-600 hover:text-white text-sm font-medium transition-colors group-hover:translate-x-1 duration-300">
                                     Reservar <ChevronRight size={14} />
                                 </button>
                             </div>
