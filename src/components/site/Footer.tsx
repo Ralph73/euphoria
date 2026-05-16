@@ -30,12 +30,20 @@ export const Footer = () => {
   const encodedMessage = encodeURIComponent(customMessage);
 
   const openWhatsApp = () => {
-    const baseUrl = /Android|iPhone|iPad/i.test(navigator.userAgent)
-      ? 'https://whatsapp.com'
-      : 'https://wa.me';
+    // Para dispositivos móviles: usar whatsapp:// (abre la app)
+    // Para escritorio: usar https://web.whatsapp.com
+    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
 
-    window.open(`${baseUrl}?phone=${whatsappNumber}&text=${encodedMessage}`, '_blank');
+    let baseUrl;
+    if (isMobile) {
+      baseUrl = `whatsapp://send?phone=${whatsappNumber}&text=${encodedMessage}`;
+    } else {
+      baseUrl = `https://web.whatsapp.com/send?phone=${whatsappNumber}&text=${encodedMessage}`;
+    }
+
+    window.open(baseUrl, '_blank');
   };
+
 
   // URL del mapa usando la dirección
   const mapUrl = `https://www.google.com/maps?q=${encodeURIComponent(address)}&output=embed`;

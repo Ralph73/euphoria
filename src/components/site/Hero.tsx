@@ -131,7 +131,7 @@ export const Hero = () => {
 
                                     {/* Frase de venta */}
                                     {promotion.teaser && (
-                                        <p className="text-velvet-orchid-300 text-sm md:text-base max-w-md mx-auto mb-4">
+                                        <p className="dark:text-velvet-orchid-300 text-sm md:text-base max-w-md mx-auto mb-4">
                                             {promotion.teaser}
                                         </p>
                                     )}
